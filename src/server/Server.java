@@ -65,14 +65,14 @@ public class Server {
         return authService;
     }
 
-//    void privateMsg(ClientHandler currentClient, String distClient, String message) {
-//        for (ClientHandler o : clients) {
-//            if (distClient.equalsIgnoreCase(o.getNickname())) {
-//                o.sendMsg("[" + distClient + "] <- [" + currentClient.getNickname() + "] : " + message);
-//                currentClient.sendMsg("[" + currentClient.getNickname() + "] -> [" + distClient + "] : " + message);
-//                return;
-//            }
-//        }
-//        currentClient.sendMsg("Пользователь " + distClient + " не в сети, либо не существует ");
-//    }
+    void privateMsg(ClientHandler currentClient, String distClient, String message) {
+        for (ClientHandler o : clients) {
+            if (distClient.equalsIgnoreCase(o.getNickname())) {
+                o.sendMsg("[" + distClient + "] <- [" + currentClient.getNickname() + "] : " + message);
+                currentClient.sendMsg("[" + currentClient.getNickname() + "] -> [" + distClient + "] : " + message);
+                return;
+            }
+        }
+        currentClient.sendMsg("Пользователь " + distClient + " не в сети, либо не существует ");
+    }
 }
