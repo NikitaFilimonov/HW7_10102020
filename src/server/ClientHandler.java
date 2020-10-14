@@ -77,12 +77,12 @@ public class ClientHandler {
         }
     }
 
-//    private void checkPrivateMessage(final String messageIn) {
-//        if (messageIn.startsWith("/w ")) {
-//            final String[] prvMsg = messageIn.split("\\s", 3);
-//            server.privateMsg(this, prvMsg[1], prvMsg[2]);
-//        }
-//    }
+    private void checkPrivateMessage(final String messageIn) {
+        if (messageIn.startsWith("/w ")) {
+            final String[] prvMsg = messageIn.split("\\s", 3);
+            server.privateMsg(this, prvMsg[1], prvMsg[2]);
+        }
+    }
 
     public void sendMsg(String msg) {
         try {
